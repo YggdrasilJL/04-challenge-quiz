@@ -1,7 +1,8 @@
-var page = document.getElementById('page');
+let page = document.getElementById('page');
 const startBtn = document.getElementById('startBtn');
 const qContainer = document.getElementById('qContainer');
-const questions = [{
+let timeLeft = 150;
+const questions = [{ // creating the questions and options dynamically to practice my js skills
     question: "What are Thor's two sons named?",
     options: ['Magni and Modi', 'Gunther and Magni', 'Loki and Freyr', 'None of these']
 },  {
@@ -33,7 +34,37 @@ const questions = [{
     options: ['He killed her pet', 'He killed her child', "She doesn't", "She want's his weapons"]
 }]
 
-
 startBtn.addEventListener('click', function(event) {
     page.style.display = 'none';
+    displayQuestions()
+    startQuiz()
 });
+
+function displayQuestions() {
+
+for (i = 0; i < questions.length; i++) {
+    let questContain = document.createElement('div');
+    let questionText = document.createElement('h3');
+    let optContain = document.createElement('div');
+
+    questionText.textContent = questions[i].question;
+}
+}
+
+function startQuiz() {
+    timer = setInterval(function() {
+        timeLeft--;
+        if (timeLeft === 0) {
+            clearInterval()
+            endQuiz()
+        }
+    }, 1000)
+}
+
+function endQuiz() {
+    location.assign('quizHighScore.html')
+}
+
+
+
+

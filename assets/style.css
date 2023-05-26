@@ -4,6 +4,10 @@
 
 body {
     background-image: url("images/background.png");
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(2px);
 }
 
 #page {
@@ -45,6 +49,64 @@ button:hover {
     transform: scale(1.3);
 }
 
-#qContainer {
-    display: none;
+
+header {
+    color: rgb(169, 190, 233);
+    background: rgba(0, 0, 0, 0.404);
+    border-radius: 20px;
+    width: 1000px;
+    display: flex;
+    font-size: 3.5vh; 
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+#hScore {
+    color: rgb(235, 242, 255);
+    font-size: 40px;
+    margin-top: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#scoreBox {
+    border: 3px solid rgb(169, 190, 233);
+    box-shadow: 1px 3px 6px rgb(7, 22, 53);
+    height: 70vh;
+    width: 30vw;
+    font-size: 3vh;
+    margin-top: 0.1vh;
+    border-radius: 4vw;
+}
+
+#scoreBox h2 {
+    text-align: center;
+    color: rgb(169, 190, 233);
+    background: rgba(0, 0, 0, 0.404);
+    border-radius: 20px;
+    margin-top: 2vh;
+    margin-left: 6vw;
+    width: fit-content;
+    padding-left: 5vh;
+    padding-right: 5vh;
+}
+
+ol {
+    width: 300px;
+    margin-top: 10px;
+    border-radius: 2vh;
+    margin-left: 10vh;
+    margin-right: 3vh;
+    padding: 3px;
+}
+
+ol li {
+    border: 1px solid #000;
+    border-radius: 2vh;
+    padding: 4px;
+    margin-bottom: 3px;
+    background: rgba(255, 255, 255, 0.849);
 }
