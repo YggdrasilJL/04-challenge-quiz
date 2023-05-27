@@ -34,7 +34,7 @@ body {
 
 }
 
-button {
+#startBtn {
     transition: transform 0.3s ease-in-out;
     margin-top: 100px;
     font-size: xx-large;
@@ -44,7 +44,7 @@ button {
     border-radius: 40px;
 }
 
-button:hover {
+#startBtn:hover {
     cursor: pointer;
     transform: scale(1.3);
 }
@@ -109,4 +109,44 @@ ol li {
     padding: 4px;
     margin-bottom: 3px;
     background: rgba(255, 255, 255, 0.849);
+}
+
+#qContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+}
+
+#qContainer button {
+    border: 3px solid rgb(13, 95, 24);
+    border-radius: 10px;
+    margin-top: 5px;
+    width: 300px;
+}
+
+#qContainer button:hover {
+    background-color: rgba(178, 248, 178, 0.705);
+    font-weight: 550;
+}
+
+#qContainer h3 {
+    color: whitesmoke;
+    font-size: 40px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+#timer {
+    color: rgb(226, 81, 37);
+    display: flex;
+    justify-content: center;
+    background: rgb(218, 171, 148);
+    position: absolute;
+    font-size: 30px;
+    top: 20px;
+    right: 100px;
+    width: 80px;
+    border-radius: 20px;
+    padding-bottom: 7px;
 }
