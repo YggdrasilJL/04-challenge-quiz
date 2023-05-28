@@ -15,7 +15,7 @@ body {
     text-align: center;
     margin: auto;
     margin-top: 70px;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     align-items: center;
     width: 700px;
@@ -57,7 +57,7 @@ header {
     width: 1000px;
     display: flex;
     font-size: 3.5vh; 
-    justify-content: center;
+    justify-content: center; 
     margin-top: 5vh;
 }
 
@@ -75,11 +75,12 @@ header {
 #scoreBox {
     border: 3px solid rgb(169, 190, 233);
     box-shadow: 1px 3px 6px rgb(7, 22, 53);
-    height: 70vh;
+    height: auto;
     width: 30vw;
     font-size: 3vh;
     margin-top: 0.1vh;
     border-radius: 4vw;
+    padding-bottom: 50px;
 }
 
 #scoreBox h2 {
@@ -89,12 +90,13 @@ header {
     border-radius: 20px;
     margin-top: 2vh;
     margin-left: 6vw;
+    margin-bottom: 30px;
     width: fit-content;
     padding-left: 5vh;
     padding-right: 5vh;
 }
 
-ol {
+div li {
     width: 300px;
     margin-top: 10px;
     border-radius: 2vh;
@@ -103,7 +105,7 @@ ol {
     padding: 3px;
 }
 
-ol li {
+div li {
     border: 1px solid #000;
     border-radius: 2vh;
     padding: 4px;
@@ -149,4 +151,41 @@ ol li {
     width: 80px;
     border-radius: 20px;
     padding-bottom: 7px;
+}
+
+#initialsForm {
+    display: none;
+}
+
+#initialsForm label.label {
+    margin-bottom: 30px;
+}
+
+#initialsForm input.input {
+    border-radius: 20px;
+    width: 150px;
+    margin-bottom: 200px;
+}
+
+#initialsForm button.button {
+    width: 120px;
+    font-size: 30px;
+    border-radius: 20px;
+}
+
+
+
+#scoreList {
+    display: flex;
+    justify-content: center;
+    padding: 0%;
+}
+
+#scoreList li {
+    margin: 0%;
+    padding-left: 10px ;
+    padding-right: 10px;
+    width: fit-content;
+    color: black;
+    background-color: rgb(127, 194, 194);
 }

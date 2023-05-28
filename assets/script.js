@@ -1,10 +1,16 @@
-let page = document.getElementById('page');
-const startBtn = document.getElementById('startBtn');
-const questContainer = document.getElementById('qContainer');
-let timeDisplay = document.createElement('div');
-    timeDisplay.id = 'timer';
-let timeLeft = 100;
-let currentQuestIndex = 0;
+let page = document.getElementById('page')
+const startBtn = document.getElementById('startBtn')
+const questContainer = document.getElementById('qContainer')
+let timeDisplay = document.createElement('div')
+    timeDisplay.id = 'timer'
+let timeLeft = 100
+let currentIndex = 0
+let initForm = document.getElementById('initialsForm')
+let initLabel = document.getElementById('initialsLabel')
+let initInput = document.getElementById('initials')
+let initBtn = document.getElementById('submit')
+let scoreList = document.getElementById('scoreList')
+let userInit = ''
 const questions = [{ // creating the questions and options dynamically to practice js
     question: "What are Thor's two sons named?",
     options: ['None of these', 'Magni and Modi', 'Gunther and Magni', 'Loki and Freyr'],
@@ -47,55 +53,84 @@ const questions = [{ // creating the questions and options dynamically to practi
     answer: 1
 }]
 
-startBtn.addEventListener('click', function() {
-    page.style.display = 'none';
-    startQuiz();
-    displayQuestions();
-});
-
+if (startBtn) {
+startBtn.addEventListener('click', function(event) {
+    event.preventDefault()
+    page.style.display = 'none'
+    startQuiz()
+    displayQuestions()
+})
+}
 function displayQuestions() {
-    if (currentQuestIndex >= questions.length) {
-      endQuiz();
-      return;
+    if (currentIndex >= questions.length) {
+      endQuiz()
+      return
     }
   
-    let questContain = document.createElement('div');
-    let questText = document.createElement('h3');
+    let questContain = document.createElement('div')
+    let questText = document.createElement('h3')
   
-    questText.textContent = questions[currentQuestIndex].question;
-    questContain.appendChild(questText);
+    questText.textContent = questions[currentIndex].question
+    questContain.appendChild(questText)
   
-    let options = questions[currentQuestIndex].options;
+    let options = questions[currentIndex].options
     for (let i = 0; i < options.length; i++) {
-      let optBtn = document.createElement('button');
-      optBtn.textContent = options[i];
-      qContainer.appendChild(optBtn);
+      let optBtn = document.createElement('button')
+      optBtn.textContent = options[i]
+      questContainer.appendChild(optBtn)
       optBtn.addEventListener('click', function() {
-        if (i !== questions[currentQuestIndex].answer) {
-            timeLeft -= 15;
+        if (i !== questions[currentIndex].answer) {
+            timeLeft -= 15
         }
-        currentQuestIndex++;
-        qContainer.innerHTML = '';
+        currentIndex++
+        questContainer.innerHTML = ''
         displayQuestions()
     })
     }
 
-    questContainer.appendChild(questContain);
-    questContainer.appendChild(timeDisplay);
+    questContainer.appendChild(questContain)
+    questContainer.appendChild(timeDisplay)
   }
 
 function startQuiz() {
-    timeDisplay.textContent = timeLeft;
+    timeDisplay.textContent = timeLeft
     timer = setInterval(function() {
-        timeLeft--;
+        timeLeft--
         if (timeLeft <= 0) {
-            clearInterval()
+            clearInterval(timer)
             endQuiz()
         }
-        timeDisplay.textContent = timeLeft;
+        timeDisplay.textContent = timeLeft
     }, 1000)
 }
 
 function endQuiz() {
-    location.assign('quizHighScore.html')
+    questContainer.style.display = 'none'
+    if (timeLeft < 0) {
+        timeLeft = 0
+    }
+
+    initForm.style.display = 'flex'
+    initForm.style.flexDirection = 'column'
+    initForm.style.alignItems = 'center'
+    initForm.style.fontSize = '40px'
+    initForm.style.marginTop = '50px'
+    initLabel.classList.add('label')
+    initInput.classList.add('input')
+    initBtn.classList.add('button')
+
 }
+
+
+initBtn.addEventListener('click', function(event) {
+    event.preventDefault()
+    
+    if (initInput.value === '') {
+        alert('Please enter your initials.')
+        return
+    }
+    localStorage.setItem('initials', initInput.value)
+    localStorage.setItem('score', timeLeft)
+    location.assign('quizHighScore.html')
+  })
+
