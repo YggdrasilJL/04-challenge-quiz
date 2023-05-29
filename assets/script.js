@@ -128,12 +128,18 @@ initBtn.addEventListener('click', function(event) {
     if (initInput.value === '') {
         alert('Please enter your initials.')
         return
-    }
-    
-    if (!isNaN(initInput.value)) {
+    } else if (!isNaN(initInput.value)) {
         alert('Your initials cannot be numerical!')
         return
     }
+    
+    let scores = JSON.parse(localStorage.getItem('scores')) || []
+     scores.push({
+        initials: initInput.value,
+        score: timeLeft
+     })
+
+     localStorage.setItem('scores', JSON.stringify(scores))
 
      location.assign('quizHighScore.html')
   })

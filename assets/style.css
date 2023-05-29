@@ -140,17 +140,19 @@ div li {
 }
 
 #timer {
-    color: rgb(226, 81, 37);
+    color: rgb(182, 231, 158);
+    text-shadow: 3px 3px #443b3b;
     display: flex;
     justify-content: center;
-    background: rgb(218, 171, 148);
+    background-image: url('images/BladeOfChaos.png');
+    background-size: 100% !important;
     position: absolute;
     font-size: 30px;
     top: 20px;
     right: 100px;
     width: 80px;
     border-radius: 20px;
-    padding-bottom: 7px;
+    padding: 80px;
 }
 
 #initialsForm {
@@ -177,15 +179,72 @@ div li {
 
 #scoreList {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 0%;
 }
 
-#scoreList li {
+#scoreList li:nth-child(1) {
     margin: 0%;
+    margin-bottom: 8px;
     padding-left: 10px ;
     padding-right: 10px;
     width: fit-content;
-    color: black;
-    background-color: rgb(127, 194, 194);
+    color: rgb(169, 190, 233);
+    background-color: rgba(136, 44, 44, 0.685);
+}
+
+#scoreList li:nth-child(2) {
+    margin: 0%;
+    margin-bottom: 8px;
+    padding-left: 10px ;
+    padding-right: 10px;
+    width: fit-content;
+    color: rgb(169, 190, 233);
+    background-color: rgba(105, 95, 37, 0.685);
+}
+
+#scoreList li:nth-child(3) {
+    margin: 0%;
+    margin-bottom: 8px;
+    padding-left: 10px ;
+    padding-right: 10px;
+    width: fit-content;
+    color: rgb(169, 190, 233);
+    background-color: rgba(80, 37, 105, 0.685);
+}
+
+#scoreList li:nth-child(4) {
+    margin: 0%;
+    margin-bottom: 8px;
+    padding-left: 10px ;
+    padding-right: 10px;
+    width: fit-content;
+    color: rgb(169, 190, 233);
+    background-color: rgba(37, 64, 105, 0.685);
+}
+
+#scoreList li:nth-child(5) {
+    margin: 0%;
+    margin-bottom: 8px;
+    padding-left: 10px ;
+    padding-right: 10px;
+    width: fit-content;
+    color: rgb(169, 190, 233);
+    background-color: rgba(59, 105, 37, 0.685);
+}
+
+#bladeImg {
+    display: none;
+}
+
+img.smaller {
+    margin-bottom: -14px;
+    width: 50px;
+    height: 50px;
+}
+
+#scoreNum {
+    font-family: 'DotGothic16', monospace;
+    font-size: 30px;
 }

@@ -1,18 +1,27 @@
-// Retrieve the scores from local storage
+// take scores from local storage
 const scores = JSON.parse(localStorage.getItem('scores')) || [];
+let blade = document.getElementById('bladeImg')
+// Sort the scores from highest number to lowest
+scores.sort((a, b) => b.score - a.score);
 
-// sorts the scores from highest number to lowest
-if (scores.length === 0) {
-  // Handle the case when there are no scores
-  const noScoresMessage = document.createElement('p');
-  noScoresMessage.textContent = 'No scores available.';
-  scoreList.appendChild(noScoresMessage);
-} else {
-  scores.sort((a, b) => b.score - a.score);
-
-  scores.forEach((score) => {
-    const listItem = document.createElement('li');
-    listItem.textContent = `${score.initials}-${score.score}`;
-    scoreList.appendChild(listItem);
-  });
+if (scores.length > 5) {
+  scores.splice(5);
 }
+
+// Get the score list element
+const scoreList = document.getElementById('scoreList');
+
+scoreList.innerHTML = '';
+blade.classList.add('smaller')
+
+// This loops through the scores and creates list items to display them
+scores.forEach((score) => {
+  const listItem = document.createElement('li');
+  const initialsText = document.createTextNode(score.initials.toUpperCase());
+  const scoreText = document.createTextNode(score.score);
+  
+  const imgTag = `<img src="${blade.src}" alt="Blade of Chaos" class="smaller">` // Create the image tag
+  
+  listItem.innerHTML = `"${initialsText.textContent}" ${imgTag} <span id="scoreNum">${scoreText.textContent}</span>`
+  scoreList.appendChild(listItem);
+});
