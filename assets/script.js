@@ -129,8 +129,11 @@ initBtn.addEventListener('click', function(event) {
         alert('Please enter your initials.')
         return
     }
-    localStorage.setItem('initials', initInput.value)
-    localStorage.setItem('score', timeLeft)
-    location.assign('quizHighScore.html')
-  })
+    
+    if (!isNaN(initInput.value)) {
+        alert('Your initials cannot be numerical!')
+        return
+    }
 
+     location.assign('quizHighScore.html')
+  })
