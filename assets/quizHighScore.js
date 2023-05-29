@@ -2,14 +2,17 @@
 const scores = JSON.parse(localStorage.getItem('scores')) || [];
 
 // sorts the scores from highest number to lowest
-scores.sort((a, b) => b.score - a.score)
+if (scores.length === 0) {
+  // Handle the case when there are no scores
+  const noScoresMessage = document.createElement('p');
+  noScoresMessage.textContent = 'No scores available.';
+  scoreList.appendChild(noScoresMessage);
+} else {
+  scores.sort((a, b) => b.score - a.score);
 
-// gets the score list element
-const scoreList = document.getElementById('scoreList');
-
-// this loops through the scores and create list items to display them
-scores.forEach((score) => {
-  const listItem = document.createElement('li');
-  listItem.textContent = `${score.initials}-${score.score}`;
-  scoreList.appendChild(listItem);
-});
+  scores.forEach((score) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${score.initials}-${score.score}`;
+    scoreList.appendChild(listItem);
+  });
+}
