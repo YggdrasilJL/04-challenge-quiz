@@ -4,7 +4,7 @@ Welcome to the God of War Quiz! This is test about my favourite video game serie
 
 ## Getting Started
 
-To get started with the God of War Quiz, simply visit the following [link](https://yggdrasiljl.github.io/04-quiz-challenge/) and have fun!
+To get started with the God of War Quiz, simply visit the following [link](https://yggdrasiljl.github.io/04-challenge-quiz/) and have fun!
 
 ## Usage
 
