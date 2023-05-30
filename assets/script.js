@@ -37,7 +37,7 @@ const questions = [{ // creating the questions and options dynamically to practi
     answer: 1
 }, {
     question: 'What does Kratos say before he kills Baldur?',
-    options: ['"Mind your tone, boy."', '"The cycle ends here. We must be better than this"', '"He just screams"', '"My vegeance ends now."'],
+    options: ['"Mind your tone, boy."', '"The cycle ends here. We must be better than this"', 'Kratos just screams at him', '"My vegeance ends now."'],
     answer: 1
 }, {
     question: 'What broke baldurs invulerbility spell?',
